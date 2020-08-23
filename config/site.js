@@ -19,17 +19,18 @@ module.exports = {
           createdAt
           updatedAt
           resourcePath
-          languages(last: 1, orderBy: { field: SIZE, direction:ASC } ) {
+          languages(last: 9, orderBy: { field: SIZE, direction:ASC } ) {
+            totalSize
+            totalCount
             edges {
+              size
               node {
                 name
                 color
               }
             }
           }
-          licenseInfo {
-            name
-          }
+
           stargazers {
             totalCount
           }

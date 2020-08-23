@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Repository from "../components/repository"
+import GitChart from "../components/gitChart"
 import Layout from "../components/layout"
 import Avatar from "../components/avatar"
 import Image from "../components/image"
@@ -42,6 +43,7 @@ const IndexPage = ({ data }) => {
             )}
           </div>
         </div>
+        <GitChart />
         {repositories.nodes
           .map(repo => <Repository key={repo.name} repo={repo} />)
           .reverse()}
@@ -70,16 +72,17 @@ export const gitHubQuery = graphql`
               createdAt
               updatedAt
               languages {
+                totalSize
+                totalCount
                 edges {
+                  size
                   node {
                     name
                     color
                   }
                 }
               }
-              licenseInfo {
-                name
-              }
+
               stargazers {
                 totalCount
               }
