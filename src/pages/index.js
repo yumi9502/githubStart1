@@ -63,6 +63,7 @@ export const gitHubQuery = graphql`
           avatarUrl
           isHireable
           repositories {
+            totalCount
             nodes {
               name
               description
