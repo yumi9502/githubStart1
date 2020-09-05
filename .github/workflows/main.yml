@@ -28,5 +28,5 @@ jobs:
         uses: maxheld83/ghpages@v0.2.1
         env:
           GITHUB_TOKEN: ${{secrets.ACCESS_TOKEN}}
-          GH_PAT: ${{secrets.GITHUB_API_KEY}}
+          GH_PAT: ${{secrets.GITHUBAPI_TOKEN}}
           BUILD_DIR: "public/"
